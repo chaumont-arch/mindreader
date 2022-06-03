@@ -2,13 +2,14 @@ import history as h
 import ai
 import time
 import sys
+import debug
 
 class Game:
     def __init__(self,id):
         self.id = id
         self.active_history = h.History(time.time(),self.id)
         self.memory = [self.active_history]
-        self.ai = ai.AI(1/3)
+        self.ai = ai.AI(debug.p_floor)
         self.display_score = 0
         self.move_count = 0
 
