@@ -13,9 +13,9 @@ def load_all_files():
 
 def main():
     memories = load_all_files()
-    print("name\t\t\tid\tmove count")
+    print("name\t\t\t\tid\tmove count")
     for memory in memories:
-        print("{}\t{}\t{}".format(memory.name,memory.id,len(memory.history)))
+        print("{}\t\t{}\t{}".format(memory.name,memory.id,len(memory.history)))
 
 if __name__ == '__main__':
     main()

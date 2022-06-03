@@ -32,7 +32,7 @@ class AI:
         best_probability = 2
         best_index = -1
         if debug.show_ai_thoughts:
-            print("Counts at {}".format(results))
+            print("Total counts at {}".format(results))
 
         if debug.show_ai_thoughts:
             print("Values at: ",end="")
@@ -59,6 +59,10 @@ class AI:
         total_matches = []
         for history in memory:
             matches = history.scan_move_history(move_history)
+            if debug.show_full_history:
+                print("Evaluating file {}".format(history))
+                print("Local history {}".format(history.history))
+                print("Local counts are {}\n".format(matches))
             total_matches = self.interleave(total_matches,matches)
         results = self.interpret_results(total_matches)
 

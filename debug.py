@@ -1,4 +1,4 @@
-show_ai_thoughts = True
-show_full_history = True
+show_ai_thoughts = False
+show_full_history = False
 show_terse_thoughts = False
 auto_id = True

@@ -37,8 +37,8 @@ class Game:
         self.memory[0].add_move(*move_pair)
 
     def print_move(self,move_pair):
-        print("Round {} results:".format(self.move_count))
-        print("--------")
+        print("\nRound {} results:".format(self.move_count))
+        print("---------------------")
         print("Human: {}\tAI: {}".format(*move_pair))
         print("Current Score {}\n".format(self.display_score))
 
@@ -54,4 +54,4 @@ class Game:
     
     def print_memory_info(self):
         if len(self.memory) > 1:
-            print("{} memory file(s) loaded".format(len(self.memory)-1))
+            print("{} memory file(s) loaded\n".format(len(self.memory)-1))
