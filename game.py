@@ -62,7 +62,7 @@ class Game:
         self.print_move([human_move,ai_move])
 
         if debug.datalog:
-            self.datalog.write("{},{},{},{},{}".format(self.move_count,human_move,ai_move,self.display_score,p_value),True)
+            self.datalog.write("{},{},{},{},{},{}".format(self.move_count,human_move,ai_move,self.display_score,p_value,int(human_move==ai_move)),True)
     
     def print_memory_info(self):
         if len(self.memory) > 1:

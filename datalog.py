@@ -14,8 +14,7 @@ class Datalog:
 
     def log_timecode(self):
         f = open("datalogs/{}.csv".format(self.id),"a")
-        f.write("New game at {},!,!,!,!,!\n".format(self.timecode))
-        f.write("round,player move,ai move,score,p-value\n")
+        f.write("round,player move,ai move,score,p-value,equal,{}\n".format(self.timecode))
         f.close()
 
     def write(self,value,end):
