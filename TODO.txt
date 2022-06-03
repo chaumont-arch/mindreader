@@ -1,0 +1,2 @@
+todo:
+make sure to fuse counts before converting to probability (and maybe weigh by order)
