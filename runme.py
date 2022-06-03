@@ -1,6 +1,7 @@
 import game
 import os
 import pickle
+import debug
 
 def prep_save_folder():
     try:
@@ -18,6 +19,9 @@ def load_all_files():
     return power_files
 
 def get_profile(valid_ids):
+    if debug.auto_id:
+        return "0"
+        
     id = input("Input ID: ")
     flag = (id in valid_ids) or (len(valid_ids) == 0)
     while not flag:
