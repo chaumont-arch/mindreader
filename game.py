@@ -26,7 +26,7 @@ class Game:
         except:
             pass
         while not isinstance(feedin,int):
-            feedin = input("Invalid input received. Input value:")
+            feedin = input("Invalid input received. Input value: ")
             try:
                 feedin = int(feedin)
             except:
@@ -41,7 +41,7 @@ class Game:
         print("\nRound {} results:".format(self.move_count))
         print("---------------------")
         print("Human: {}\tAI: {}".format(*move_pair))
-        print("Current Score {}\n".format(self.display_score))
+        print("\tCurrent score: {}\n".format(self.display_score))
 
     def round(self):
         ai_move = self.ai.interpret_history_with_memory(self.active_history.history,self.memory)
