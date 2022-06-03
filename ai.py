@@ -49,13 +49,19 @@ class AI:
             print(" ")
             
         return [results[best_index],best_probability]
-        
+
+    def get_p_value(self,move_history,memory): #BAD    
+        total_matches = []
+        for history in memory:
+            matches = history.scan_move_history(move_history)
+            if debug.show_full_history:
+                print("Evaluating file {}".format(history))
+                print("Local history {}".format(history.history))
+                print("Local counts are {}\n".format(matches))
+            total_matches = self.interleave(total_matches,matches)
+        return self.interpret_results(total_matches)[1]
 
     def interpret_history_with_memory(self,move_history,memory):
-        #get each history's match count
-        #merge into one
-        #generate probabilities
-        #interpret
         total_matches = []
         for history in memory:
             matches = history.scan_move_history(move_history)
@@ -83,5 +89,4 @@ class AI:
                 return 0
             else:
                 return 1
-
         

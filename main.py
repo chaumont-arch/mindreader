@@ -9,6 +9,12 @@ def prep_save_folder():
     except:
         pass
 
+def prep_data_folder(): #I know this should be merged with the previous, but it doesn't matter in this context.
+    try:
+        os.mkdir("datalogs")
+    except:
+        pass
+
 def load_all_files():
     power_files = []
     for file in os.listdir("savefiles"):
@@ -35,6 +41,8 @@ def get_profile(valid_ids):
 
 def main():
     prep_save_folder()
+    if debug.datalog:
+        prep_data_folder()
     memories = load_all_files()
 
     valid_ids = []
